@@ -350,17 +350,7 @@ def init():
 			while fixed_bossTime[j] < tmp_fixed_now :
 				fixed_bossTime[j] = fixed_bossTime[j] + datetime.timedelta(hours=int(fixed_bossData[j][5]), minutes=int(fixed_bossData[j][6]), seconds = int(0))
 
-	################# 이모지 로드 ######################
 
-	emo_inidata = repo.get_contents("emoji.ini")
-	emoji_data1 = base64.b64decode(emo_inidata.content)
-	emoji_data1 = emoji_data1.decode('utf-8')
-	emo_inputData = emoji_data1.split('\n')
-
-	for i in range(len(emo_inputData)):
-		tmp_emo = emo_inputData[i][8:].rstrip('\r')
-		if tmp_emo != "":
-			tmp_racing_unit.append(tmp_emo)
 	
 	################# 리젠보스 시간 정렬 ######################
 	regenData = []
